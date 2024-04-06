@@ -35,7 +35,7 @@ def get_faciltiies():
     #print(response)
     return str(response.status_code)
 
-@app.route(r'/main')
+@app.route(r'/home')
 def get_main():
     return render_template("main.html")
 
