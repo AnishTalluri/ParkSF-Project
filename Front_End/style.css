@@ -1,0 +1,48 @@
+/* @keyframes wave {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+} */
+
+body {
+    background: #030334;
+    animation: wave 2s infinite;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.display-1 {
+    text-align: center;
+    background-image: url(personal_images/in_sf.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    font-size: 3.5rem;
+    font-weight: bold;
+    padding-top: 150;
+    padding-bottom: 150;
+
+}
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+@media(max-width: 991px) {
+    .sidebar{
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
+}
