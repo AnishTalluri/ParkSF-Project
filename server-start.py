@@ -28,39 +28,39 @@ import os
 
 app = Flask("parkSF")
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+# @app.route('/register', methods=['GET', 'POST'])
+# def register():
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
         
-        # Call the function to add users to the database
-        add_users_to_db(username, password)
+#         # Call the function to add users to the database
+#         add_users_to_db(username, password)
 
-        # Redirect to a success page or render a success template
-        return render_template('login.html', success_message="Registration successful!")
-    else:
-        # Render the registration form template for GET requests
-        return render_template('register.html')
+#         # Redirect to a success page or render a success template
+#         return render_template('login.html', success_message="Registration successful!")
+#     else:
+#         # Render the registration form template for GET requests
+#         return render_template('register.html')
 
 
-@app.route('/login2', methods=['POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+# @app.route('/login2', methods=['POST'])
+# def login():
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
         
-        # Query the database to verify the user credentials
-        if database_operation.verify_user_credentials(username, password):
-            # Redirect to the main page or any other page on successful login
-            return redirect(url_for('get_main'))
-        else:
-            # If the credentials are not valid, render the login form again with an error message
-            error_message = "Invalid username or password."
-            return render_template('login2.html', error_message=error_message)
-    else:
-        # Render the login form template for GET requests
-        return render_template('login2.html')
+#         # Query the database to verify the user credentials
+#         if database_operation.verify_user_credentials(username, password):
+#             # Redirect to the main page or any other page on successful login
+#             return redirect(url_for('get_main'))
+#         else:
+#             # If the credentials are not valid, render the login form again with an error message
+#             error_message = "Invalid username or password."
+#             return render_template('login2.html', error_message=error_message)
+#     else:
+#         # Render the login form template for GET requests
+#         return render_template('login2.html')
 
 @app.route(r'/users')
 def get_faciltiies():
