@@ -9,32 +9,35 @@
 
   <!-- Search bar -->
   <div class="search-container">
-    <input type="text" id="search-input" placeholder="Enter your location">
+    <form class="form" method="POST">
+      <input type="text" id="search-input" name="location_search" placeholder="Enter your location">
     <button onclick="search()">Search</button>
+  </form>
+    
   </div>
 
   <!-- Bike list -->
   <div>
     <div class="list-container">
-      <h3>{{1_dock}}</h3>
-      <p>{{1_distance}}</p>
+      <h3>{{dock_1}}</h3>
+      <p>{{dist_1}}</p>
     </div>
     <div class="list-container">
-      <h3>{{2_dock}}</h3>
-      <p>{{2_distance}}</p>
+      <h3>{{dock_2}}</h3>
+      <p>{{dist_2}}</p>
     </div>
     </div>  
     <div class="list-container">
-      <h3>{{3_dock}}</h3>
-      <p>{{3_distance}}</p>
+      <h3>{{dock_3}}</h3>
+      <p>{{dist_3}}</p>
     </div>
     <div class="list-container">
-      <h3>{{4_dock}}</h3>
-      <p>{{4_distance}}</p>
+      <h3>{{dock_4}}</h3>
+      <p>{{dist_4}}</p>
     </div>
     <div class="list-container">
-      <h3>{{5_dock}}</h3>
-      <p>{{5_distance}}</p>
+      <h3>{{dock_5}}</h3>
+      <p>{{dist_5}}</p>
     </div>
   </div>
   <!-- Repeat similar containers for other addresses -->

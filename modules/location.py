@@ -35,10 +35,11 @@ def find_closest_bike_rack(origin_address):
             continue
         destination_coordinates_float = (float(destination_coordinates[0]), float(destination_coordinates[1]))
         this_distance = calculate_distance(location, destination_coordinates_float)
-        all_bikes.append((this_distance, bike))
+        all_bikes.append((this_distance, bike["ADDRESS"]))
 
     sorted_all_bikes = sorted(all_bikes, key=lambda x: x[0])
     
+    return sorted_all_bikes
     max = 50
     for (distance, bikeInfo) in sorted_all_bikes:
         if max <= 0:

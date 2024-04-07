@@ -8,6 +8,9 @@ import requests
 import database_operation
 
 from flask_session import Session
+
+import modules.location
+
 # Define the port you want the server to listen on
 PORT = 8000
 
@@ -93,7 +96,6 @@ def get_login():
             # Query the database to verify the user credentials
             if database_operation.neurelo_add_user(username, password):
                 # Redirect to the main page or any other page on successful login
-                session['username'] = username
                 return redirect(url_for('get_register_success'))
             else:
                 # If the credentials are not valid, render the login form again with an error message
@@ -105,6 +107,7 @@ def get_login():
         elif action == "login":
             if database_operation.neurelo_verify_user(username, password):
                 # Redirect to the main page or any other page on successful login
+                session['username'] = username
                 return redirect(url_for('get_main'))
             else:
                 # If the credentials are not valid, render the login form again with an error message
@@ -118,9 +121,9 @@ def get_login():
 
     return render_template("login.html")
 
-@app.route(r'/list_view.html')
-def get_list_view():
-    return render_template("list_view.html")
+# @app.route(r'/list_view.html')
+# def get_list_view():
+#     return render_template("list_view.html")
 
 @app.route(r'/about.html')
 def get_about():
@@ -146,5 +149,37 @@ def get_register_success():
 @app.route(r'/main.html')
 def get_logout():
     return get_main()
+
+@app.route(r'/list_view.html', methods=['GET', 'POST'])
+def get_list_view():
+    if session.get("username") != None:
+        if request.method == "POST":
+            user_loc = request.form['location_search']
+            print(user_loc)
+
+            bikeLocations = modules.location.find_closest_bike_rack(user_loc)
+            dock_1 = bikeLocations[0][1]
+            dist_1 = bikeLocations[0][0]
+
+            dock_2 = bikeLocations[1][1]
+            dist_2 = bikeLocations[1][0]
+
+            dock_3 = bikeLocations[2][1]
+            dist_3 = bikeLocations[2][0]
+
+            dock_4 = bikeLocations[3][1]
+            dist_4 = bikeLocations[3][0]
+
+            dock_5 = bikeLocations[4][1]
+            dist_5 = bikeLocations[4][0]
+
+            return render_template("list_view.html", dock_1=dock_1, dist_1=dist_1,
+                                                        dock_2=dock_2, dist_2=dist_2,
+                                                        dock_3=dock_3, dist_3=dist_3,
+                                                        dock_4=dock_4, dist_4=dist_4,
+                                                        dock_5=dock_5, dist_5=dist_5)
+        else:
+            return render_template("list_view.html")
+    return get_login()
 
 app.run(debug=True)
