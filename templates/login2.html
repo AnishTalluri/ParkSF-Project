@@ -53,6 +53,10 @@
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Login">
     </form>
+
+    {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
     <p>Don't have an account? <a href="register.html">Register here</a></p>
 </body>
 </html>
