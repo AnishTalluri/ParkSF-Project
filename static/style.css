@@ -68,16 +68,16 @@ body {
 
 .mini-login-title {
     position: absolute;
-    top: 23%;
-    left: 21%;
+    top: 28%;
+    left: 20.45%;
     transform: translateY(-50%);
     text-align: center;
 }
 
 .mini-register-title {
     position: absolute;
-    top: 23%;
-    right: 17%;
+    bottom: 90%;
+    right: 35%;
     transform: translateY(-50%);
     text-align: center;
 }

@@ -86,7 +86,7 @@ def get_login():
             # Query the database to verify the user credentials
             if database_operation.neurelo_add_user(username, password):
                 # Redirect to the main page or any other page on successful login
-                return redirect(url_for('get_main'))
+                return redirect(url_for('get_register_success'))
             else:
                 # If the credentials are not valid, render the login form again with an error message
                 error_message = "Invalid username or password."
@@ -122,7 +122,7 @@ def get_team():
 def get_register():
     return render_template("register.html")
 
-@app.route(r'/register-success.html')
+@app.route(r'/register_success.html')
 def get_register_success():
     return render_template("register_success.html")
 
