@@ -283,3 +283,8 @@ input[type="password"] {
     max-width: 80%;
     max-height: 40%;
 }
+
+/* Example CSS for adding edges to text */
+.text-with-border {
+    padding: 15px; /* Optional: Add padding to increase space around the text */
+}
