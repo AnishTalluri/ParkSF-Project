@@ -1,6 +1,8 @@
 import http.server
 import socketserver
 
+import modules.location
+
 from flask import Flask, render_template, request, redirect, url_for, session
 import requests
 #from database_operation import add_users_to_db
@@ -9,7 +11,6 @@ import database_operation
 
 from flask_session import Session
 
-import modules.location
 
 # Define the port you want the server to listen on
 PORT = 8000
