@@ -15,15 +15,19 @@ geolocator = Nominatim(user_agent="parkSF")
 #     return (location.latitude, location.longitude)
 
 def translate_address_to_coordinates(origin_address):
-    location = geolocator.geocode(origin_address)
-    #location = get_user_location()
-    latitude = location.latitude
-    longitude = location.longitude
-    return (latitude, longitude)
+    try:
+        location = geolocator.geocode(origin_address)
+        #location = get_user_location()
+        latitude = location.latitude
+        longitude = location.longitude
+        return (latitude, longitude)
+    except:
+        return None
 
 def find_closest_bike_rack(origin_address):
     location = translate_address_to_coordinates(origin_address)
-
+    if location == None:
+        return None
     bikeData = database_operation.bike_get_all_information_neurelo()
     minimum_distance = -1
     minimum_bike = None
@@ -66,6 +70,6 @@ def calculate_distance_google(google_api_key, origin, destination):
         return -1
     
 def calculate_distance(location1, location2):
-    distance = haversine(location1, location2, unit=Unit.MILES)
+    distance = haversine(location1, location2, unit=Unit.FEET)
     print("Distance = " + str(distance))
     return distance

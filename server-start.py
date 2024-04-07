@@ -158,6 +158,8 @@ def get_list_view():
             print(user_loc)
 
             bikeLocations = modules.location.find_closest_bike_rack(user_loc)
+            if bikeLocations == None:
+                return render_template("list_view.html", dock_1="Unable to locate")
             dock_1 = bikeLocations[0][1]
             dist_1 = bikeLocations[0][0]
 
@@ -173,11 +175,11 @@ def get_list_view():
             dock_5 = bikeLocations[4][1]
             dist_5 = bikeLocations[4][0]
 
-            return render_template("list_view.html", dock_1=dock_1, dist_1=dist_1,
-                                                        dock_2=dock_2, dist_2=dist_2,
-                                                        dock_3=dock_3, dist_3=dist_3,
-                                                        dock_4=dock_4, dist_4=dist_4,
-                                                        dock_5=dock_5, dist_5=dist_5)
+            return render_template("list_view.html", dock_1=dock_1, dist_1=str(round(dist_1, 2)) + " feet",
+                                                        dock_2=dock_2, dist_2=str(round(dist_2, 2)) + " feet",
+                                                        dock_3=dock_3, dist_3=str(round(dist_3, 2)) + " feet",
+                                                        dock_4=dock_4, dist_4=str(round(dist_4, 2)) + " feet",
+                                                        dock_5=dock_5, dist_5=str(round(dist_5, 2)) + " feet")
         else:
             return render_template("list_view.html")
     return get_login()
