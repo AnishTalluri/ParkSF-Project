@@ -5,17 +5,35 @@ body {
 
 .display-1 {
     text-align: center;
-    background-image: url(personal_images/in_sf.jpg);
+    background-image: url(personal_images/twisty_road.jpg);
+    background-color: #030334;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 1);
     font-size: 3.5rem;
     font-weight: bold;
-    padding-top: 150;
-    padding-bottom: 150;
-
+    padding: 25%;
 }
+
+.subheading {
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    padding-top: 400px;
+    padding-bottom: 50px;
+    font-weight: bolder;
+}
+
+.subtext {
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    font-weight: bolder;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 300px;
+    gap: 8px;
+}
+
 .btn-primary {
   background-color: #007bff;
   border-color: #007bff;
@@ -46,6 +64,22 @@ body {
 .login-title {
     padding-top: 50px;
     font-size: 200%;
+}
+
+.mini-login-title {
+    position: absolute;
+    top: 23%;
+    left: 21%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.mini-register-title {
+    position: absolute;
+    top: 23%;
+    right: 17%;
+    transform: translateY(-50%);
+    text-align: center;
 }
 
 .login-pgh {
@@ -95,7 +129,7 @@ body {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 55%;
+    top: 52%;
     left: 75%;
     transform: translate(-50%, -50%);
 

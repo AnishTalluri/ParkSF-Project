@@ -38,7 +38,7 @@ def register():
         add_users_to_db(username, password)
 
         # Redirect to a success page or render a success template
-        return render_template('register.html', success_message="Registration successful!")
+        return render_template('login.html', success_message="Registration successful!")
     else:
         # Render the registration form template for GET requests
         return render_template('register.html')
