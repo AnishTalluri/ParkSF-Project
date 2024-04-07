@@ -283,3 +283,91 @@ input[type="password"] {
     max-width: 80%;
     max-height: 40%;
 }
+
+
+.address-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .address-container h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .address-container p {
+    font-size: 14px;
+    color: #555;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 500px;
+    margin-right: 500px;
+  }
+  
+  #search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  #search-input::placeholder {
+    color: #999;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+.list-header {
+    color: white;
+    text-align: center;
+}
+
+.list-body-container {
+    background-image: url(personal_images/golden_gate.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.list-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px auto;
+    width: 300px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.list-container h3 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+.list-container p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5; /* Adjust line height for better readability */
+  }
+  

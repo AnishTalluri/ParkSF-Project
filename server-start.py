@@ -110,6 +110,10 @@ def get_login():
 
     return render_template("login.html")
 
+@app.route(r'/list_view.html')
+def get_list_view():
+    return render_template("list_view.html")
+
 @app.route(r'/about.html')
 def get_about():
     return render_template("about.html")

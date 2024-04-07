@@ -4,8 +4,8 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <!-- Add any other necessary meta tags, stylesheets, or scripts here -->
 </head>
-<body>
-  <h2>Find Bike Docks Near You</h2>
+<body class="list-body-container">
+  <h2 class="list-header">Find Bike Docks Near You</h2>
 
   <!-- Search bar -->
   <div class="search-container">
@@ -14,14 +14,30 @@
   </div>
 
   <!-- Bike list -->
-  <div class="scrollable-list" id="bike-list">
-    <!-- Example address entity -->
-    <div class="address-container">
+  <div>
+    <div class="list-container">
       <h3>123 Main St</h3>
       <p>Closest bike dock to your location.</p>
     </div>
-    <!-- Repeat similar containers for other addresses -->
+    <div class="list-container">
+      <h3>456 Elm Ave</h3>
+      <p>Another bike dock nearby.</p>
+    </div>
+    </div>  
+    <div class="list-container">
+      <h3>789 Oak Rd</h3>
+      <p>Yet another bike dock.</p>
+    </div>
+    <div class="list-container">
+      <h3>101 Pine Ln</h3>
+      <p>One more bike dock.</p>
+    </div>
+    <div class="list-container">
+      <h3>555 Cedar St</h3>
+      <p>Last bike dock on the list.</p>
+    </div>
   </div>
+  <!-- Repeat similar containers for other addresses -->
 
   <!-- JavaScript code for search functionality -->
   <script>
@@ -38,5 +54,6 @@
       xhr.send();
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
