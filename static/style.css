@@ -3,17 +3,29 @@ body {
     font-family: "Montserrat", sans-serif !important;
 }
 
-.display-1 {
+.title-container {
+    position: relative;
     text-align: center;
     background-image: url(personal_images/twisty_road.jpg);
-    background-color: #030334;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 1);
-    font-size: 3.5rem;
-    font-weight: bold;
     padding: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.EZDock {
+    color: #FFFF;
+    margin: 0 auto;
+    border: 2px #030334;
+    padding: 7.5% 15%;
+    background: #030334;
+    font-size: 500%;
+    font-weight: bolder;
+    opacity: 0.8;
+    border-radius: 50px;
 }
 
 .subheading {
@@ -30,7 +42,7 @@ body {
     font-weight: bolder;
     padding-left: 100px;
     padding-right: 100px;
-    padding-bottom: 300px;
+    padding-bottom: 600px;
     gap: 8px;
 }
 
@@ -43,6 +55,42 @@ body {
 .btn-primary:hover {
   background-color: #0069d9;
   border-color: #0062cc;
+}
+
+.button-63 {
+    margin: 0 auto 600px;
+    font-size: 2.5rem !important;
+    padding: 2rem 2.5rem;
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 30px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.button-63:active,
+.button-63:hover {
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    .button-63 {
+        font-size: 24px;
+        min-width: 196px;
+  }
 }
 
 @media(max-width: 991px) {
@@ -68,16 +116,16 @@ body {
 
 .mini-login-title {
     position: absolute;
-    top: 23%;
-    left: 21%;
+    top: 28%;
+    left: 20.45%;
     transform: translateY(-50%);
     text-align: center;
 }
 
 .mini-register-title {
     position: absolute;
-    top: 23%;
-    right: 17%;
+    bottom: 90%;
+    right: 35%;
     transform: translateY(-50%);
     text-align: center;
 }
@@ -228,4 +276,10 @@ input[type="password"] {
 .create-button:hover,
 .create-button:focus {
     background-color: hsl(248, 62%, 48%);
+}
+
+.person-bio {
+    border-radius: 50%;
+    max-width: 80%;
+    max-height: 40%;
 }
