@@ -46,3 +46,43 @@ body {
         backdrop-filter: blur(10px);
     }
 }
+
+.background-container {
+    background-color: white;
+    position: relative;
+    top: 150;
+    left: 150;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-title {
+    padding-top: 50px;
+    font-size: 200%;
+}
+
+.login-pgh {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+}
+
+.line-container {
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center elements horizontally */
+    align-items: center; /* Center elements vertically (optional) */
+    height: 100vh; /* Set container height to full viewport height (optional) */
+  }
+
+.line {
+    border-bottom: 1px solid #ccc;
+    width: 25%;
+    margin: 10px auto;
+  }
+  
+.vertical-line {
+    border-left: 1px solid #ccc;
+    height: 50%;
+    width: 0px;
+    margin-left: 50%;
+    margin-top: 3%;
+  }
