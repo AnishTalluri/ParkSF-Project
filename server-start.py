@@ -1,12 +1,13 @@
 import http.server
 import socketserver
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import requests
 #from database_operation import add_users_to_db
 #from database_operation import verify_user_credentials
 import database_operation
 
+from flask_session import Session
 # Define the port you want the server to listen on
 PORT = 8000
 
@@ -27,7 +28,10 @@ import os
     #httpd.serve_forever()
 
 app = Flask("parkSF")
+app.config['SESSION_TYPE'] = 'filesystem'  # Use file-based storage (default)
+app.config['SESSION_PERMANENT'] = False 
 
+Session(app)
 # @app.route('/register', methods=['GET', 'POST'])
 # def register():
 #     if request.method == 'POST':
@@ -74,7 +78,10 @@ def get_faciltiies():
 
 @app.route(r'/')
 def get_main():
-    return render_template("main.html")
+    if session.get("username") != None:
+        return render_template("main.html", login_info=session.get("username"))
+    return render_template("main.html", login_info="Login")
+
 
 @app.route(r'/login.html', methods=['GET', 'POST'])
 def get_login():
@@ -86,6 +93,7 @@ def get_login():
             # Query the database to verify the user credentials
             if database_operation.neurelo_add_user(username, password):
                 # Redirect to the main page or any other page on successful login
+                session['username'] = username
                 return redirect(url_for('get_register_success'))
             else:
                 # If the credentials are not valid, render the login form again with an error message
@@ -116,11 +124,16 @@ def get_list_view():
 
 @app.route(r'/about.html')
 def get_about():
-    return render_template("about.html")
+    if session.get("username") != None:
+        return render_template("about.html", login_info=session.get("username"))
+    return render_template("about.html", login_info="Login")
 
 @app.route(r'/team.html')
 def get_team():
-    return render_template("team.html")
+    if session.get("username") != None:
+        return render_template("team.html", login_info=session.get("username"))
+    return render_template("team.html", login_info="Login")
+
 
 @app.route(r'/register.html')
 def get_register():
@@ -132,6 +145,6 @@ def get_register_success():
 
 @app.route(r'/main.html')
 def get_logout():
-    return render_template("main.html")
+    return get_main()
 
 app.run(debug=True)
