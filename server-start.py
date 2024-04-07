@@ -91,9 +91,9 @@ def get_team():
 def get_register():
     return render_template("register.html")
 
-@app.route(r'/login2.html')
-def get_login2():
-    return render_template("login2.html")
+@app.route(r'/register-success.html')
+def get_register_success():
+    return render_template("register_success.html")
 
 @app.route(r'/main.html')
 def get_logout():

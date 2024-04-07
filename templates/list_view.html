@@ -1,61 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-* {
-  box-sizing: border-box;
-}
-
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 100%;
-  padding: 10px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #ddd;
-}
-
-.btn.active {
-  background-color: #666;
-  color: white;
-}
-
-/* Style the container for scrollable list */
-.scrollable-list {
-  max-height: 500px; /* Set a maximum height for the list */
-  overflow-y: auto;
-}
-</style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Add any other necessary meta tags, stylesheets, or scripts here -->
 </head>
 <body>
-  <h2>List View</h2>
+  <h2>Find Bike Docks Near You</h2>
 
-  <div class="scrollable-list">
-  <div class="row">
-    <div class="column" style="background-color:#aaa;">
-      <h2>Column 1</h2>
-      <p>Some text..</p>
-    </div>
-    
+  <!-- Search bar -->
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Enter your location">
+    <button onclick="search()">Search</button>
   </div>
 
+  <!-- Bike list -->
+  <div class="scrollable-list" id="bike-list">
+    <!-- Example address entity -->
+    <div class="address-container">
+      <h3>123 Main St</h3>
+      <p>Closest bike dock to your location.</p>
+    </div>
+    <!-- Repeat similar containers for other addresses -->
+  </div>
+
+  <!-- JavaScript code for search functionality -->
+  <script>
+    // Function to handle search
+    function search() {
+      var query = document.getElementById('search-input').value;
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/search?q=' + query, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          document.getElementById('bike-list').innerHTML = xhr.responseText;
+        }
+      };
+      xhr.send();
+    }
+  </script>
 </body>
 </html>
