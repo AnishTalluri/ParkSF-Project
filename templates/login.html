@@ -13,13 +13,13 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
-          <a class="navbar-brand fs-4" href="main.html">EZPark</a>
+          <a class="navbar-brand fs-4" href="main.html">EZDock</a>
           <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header text-white border-bottom">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">EZPark</h5>
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">EZDock</h5>
               <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-1">
@@ -46,6 +46,8 @@
         <p class="login-pgh text-center text-body-secondary">First time? Make an account!</p>
         <div class="line"></div>
         <div class="vertical-line"></div>
+        <h1 class="login-title mini-login-title">Login</h1>
+        <h1 class="login-title mini-register-title">Create Account</h1>
         <div class="login-container">
             <form class="form">
                 <div class="input-group success">
@@ -65,15 +67,15 @@
         </div>
 
         <div class="register-container">
-            <form class="form">
+            <form class="form" action="/register" method="post">
                 <div class="input-group">
                     <label for="username">Username</label>
-                    <input type="username" name="username" id="username">
+                    <input type="username" name="username" required id="username">
                 </div>
 
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" required id="password">
                 </div>
 
                 <button type="submit" class="create-button">Create</button>
