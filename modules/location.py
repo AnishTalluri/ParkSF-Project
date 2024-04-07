@@ -4,11 +4,19 @@ from haversine import haversine, Unit
 import googlemaps
 import database_operation
 from geopy.geocoders import Nominatim
+#from geopy.geocoders import ip
 
 geolocator = Nominatim(user_agent="parkSF")
+#locator = ip.IpGeocoder()
+# def get_user_location():
+#     location = locator('me')
+#     ip.Ip
+#     print(location)
+#     return (location.latitude, location.longitude)
 
 def translate_address_to_coordinates(origin_address):
     location = geolocator.geocode(origin_address)
+    #location = get_user_location()
     latitude = location.latitude
     longitude = location.longitude
     return (latitude, longitude)

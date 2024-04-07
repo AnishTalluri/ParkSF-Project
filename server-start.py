@@ -130,11 +130,14 @@ def location():
 
 @app.route(r'/about.html')
 def get_about():
-    return render_template("about.html")
-
+    if session.get("username") != None:
+        return render_template("about.html", login_info=session.get("username"))
+    return render_template("about.html", login_info="Login")
 @app.route(r'/team.html')
 def get_team():
-    return render_template("team.html")
+    if session.get("username") != None:
+        return render_template("team.html", login_info=session.get("username"))
+    return render_template("team.html", login_info="Login")
 
 @app.route(r'/register.html')
 def get_register():
