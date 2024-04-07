@@ -47,7 +47,7 @@
         <div class="line"></div>
         <div class="vertical-line"></div>
         <div class="login-container">
-            <form class="form">
+            <form class="form" method="POST">
                 <div class="input-group success">
                     <label for="username">Username</label>
                     <input type="username" name="username" id="username">
@@ -60,12 +60,12 @@
                     <span class="msg">Incorrect password</span>
                 </div>
 
-                <button type="submit" class="login-button">Login</button>
+                <button type="submit" name="button" value="login" class="login-button">Login</button>
             </form>
         </div>
 
         <div class="register-container">
-            <form class="form">
+            <form class="form" method="POST">
                 <div class="input-group">
                     <label for="username">Username</label>
                     <input type="username" name="username" id="username">
@@ -75,8 +75,7 @@
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password">
                 </div>
-
-                <button type="submit" class="create-button">Create</button>
+                <button type="submit" name="button" value="register" class="create-button">Create</button>
             </form>
         </div>
       </div>
