@@ -306,9 +306,17 @@ input[type="password"] {
   .search-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
-    margin-left: 500px;
-    margin-right: 500px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  @media (min-width: 200px) {
+    .search-container {
+      margin-left: 20%;
+      margin-right: 20%;
+    }
   }
   
   #search-input {
