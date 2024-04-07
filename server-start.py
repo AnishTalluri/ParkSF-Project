@@ -79,8 +79,8 @@ def get_faciltiies():
 @app.route(r'/')
 def get_main():
     if session.get("username") != None:
-        return render_template("team.html", login_info=session.get("username"))
-    return render_template("team.html", login_info="Login")
+        return render_template("main.html", login_info=session.get("username"))
+    return render_template("main.html", login_info="Login")
 
 
 @app.route(r'/login.html', methods=['GET', 'POST'])
