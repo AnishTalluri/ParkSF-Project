@@ -1,18 +1,5 @@
-/* @keyframes wave {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-} */
-
 body {
     background: #030334;
-    animation: wave 2s infinite;
     font-family: "Montserrat", sans-serif !important;
 }
 
@@ -86,3 +73,125 @@ body {
     margin-left: 50%;
     margin-top: 3%;
   }
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+
+    background-color: #FFFF;
+    border: 1px solid #000;
+    padding: 2%;
+    box-shadow: 0 0 5px;
+    width: 40%;
+    max-width: 200;
+    border-radius: 20px;
+}
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 55%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+
+    background-color: #FFFF;
+    border: 1px solid #000;
+    padding: 2%;
+    box-shadow: 0 0 5px;
+    width: 40%;
+    max-width: 200;
+    border-radius: 20px;
+}
+
+input[type="username"],
+input[type="password"] {
+  width: 100%;
+  overflow: hidden;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.input-group input {
+    font-size: 1.25rem;
+    border: 1px solid black;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 0 1px;
+}
+
+.input-group .msg {
+    display: none;
+    font-size: .75rem;
+}
+
+.input-group.success input {
+    box-shadow: 0 0 0 1px hsl(100, 60%, 50%);
+}
+
+.input-group.error input {
+    box-shadow: 0 0 0 1px hsl(0, 60%, 50%);
+
+}
+
+.input-group.success .msg,
+.input-group.error .msg {
+    display: block;
+}
+
+.input-group.success .msg {
+    color: hsl(100, 60%, 50%);
+}
+
+.input-group.error .msg {
+    color: hsl(0, 60%, 50%);
+}
+
+.login-button {
+    padding: .5em 1em;
+    font-size: 1.5em;
+    font-weight: lighter;
+    color: white;
+    font-weight: bold;
+    background-color: #030334;
+    border: none;
+    outline: none;
+    cursor:pointer
+}
+
+.login-button:hover,
+.login-button:focus {
+    background-color: hsl(248, 62%, 48%);
+}
+
+.create-button {
+    padding: .5em 1em;
+    font-size: 1.5em;
+    font-weight: lighter;
+    color: white;
+    font-weight: bold;
+    background-color: #030334;
+    border: none;
+    outline: none;
+    cursor:pointer
+}
+
+.create-button:hover,
+.create-button:focus {
+    background-color: hsl(248, 62%, 48%);
+}
