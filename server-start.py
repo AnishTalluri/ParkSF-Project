@@ -87,6 +87,8 @@ def get_main():
 
 @app.route(r'/login.html', methods=['GET', 'POST'])
 def get_login():
+    if session.get("username") != None:
+        return render_template("main.html", login_info=session.get("username"))
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -144,6 +146,6 @@ def get_register_success():
 
 @app.route(r'/main.html')
 def get_logout():
-    return render_template("main.html")
+    return get_main()
 
 app.run(debug=True)
