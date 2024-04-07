@@ -1,7 +1,7 @@
-import googlemaps.client
+#import googlemaps.client
 from haversine import haversine, Unit
 
-import googlemaps
+#import googlemaps
 import database_operation
 from geopy.geocoders import Nominatim
 #from geopy.geocoders import ip
