@@ -16,9 +16,22 @@ body {
     padding: 25%;
 }
 
-.display-6 {
+.subheading {
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    padding-top: 400px;
+    padding-bottom: 50px;
+    font-weight: bolder;
+}
+
+.subtext {
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    font-weight: bolder;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 300px;
+    gap: 8px;
 }
 
 .btn-primary {
