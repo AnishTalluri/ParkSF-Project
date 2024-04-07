@@ -76,3 +76,16 @@ def neurelo_add_user(username, password):
             return True
     print("Response code = " + str(response.status_code))
     return False
+
+def bike_get_all_information_neurelo():
+    url = "https://us-west-2.aws.neurelo.com/rest/Bike_Locations___SF?select={\"ADDRESS\":true, \"LAT\":true, \"LON\":true, \"LOCATION\":true}"
+    headers = {"X-API-KEY" : "neurelo_9wKFBp874Z5xFw6ZCfvhXZbJh0Sw2JIKNNVLfkZpU7DAdjDeZv6QTT/qRh5uDjJll5ZYXrxsUJCVIV8+SzODy2k8TXYz9ksFnqIXdS7c0RkaEQjmmyOJ+P5hloiifVRVB2yXVg1C+AB/sktg6F8UptZgBHBM612ZKKERHMkumFIAx7/obyWEd4TWPAAcTxcd_Q9XKz6V2TkM7Aux02q67GhftrLDD8RZXif3Y2jQOuGw="}
+
+    #params = {"select": {"ADDRESS": true, "LAT" : true, "LON" : true, "LOCATION" : true}}
+    response = requests.get(url, headers=headers)
+    print(response.status_code)
+    if response.status_code == 200:
+        data = response.json()["data"] 
+        return data
+    
+    return []

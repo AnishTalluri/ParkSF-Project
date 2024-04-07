@@ -6,6 +6,7 @@ import requests
 #from database_operation import add_users_to_db
 #from database_operation import verify_user_credentials
 import database_operation
+import modules.location
 
 # Define the port you want the server to listen on
 PORT = 8000
@@ -109,6 +110,12 @@ def get_login():
     
 
     return render_template("login.html")
+
+
+@app.route(r'/location')
+def location():
+    modules.location.find_closest_bike_rack("1600 Holloway Ave, San Francisco, CA 94132")
+    return str(200)
 
 @app.route(r'/about.html')
 def get_about():
