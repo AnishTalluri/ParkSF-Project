@@ -28,10 +28,10 @@
                   <a class="nav-link mx-2" aria-current="page" href="main.html">Home</a>
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link" href="#about">About</a>
+                  <a class="nav-link" href="about.html">About</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="#team">Team</a>
+                    <a class="nav-link" href="team.html">Team</a>
                 </li>
               </ul>
               <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center gap-3">
@@ -46,6 +46,40 @@
         <p class="login-pgh text-center text-body-secondary">First time? Make an account!</p>
         <div class="line"></div>
         <div class="vertical-line"></div>
+        <div class="login-container">
+            <form class="form">
+                <div class="input-group success">
+                    <label for="username">Username</label>
+                    <input type="username" name="username" id="username">
+                    <span class="msg">Valid username</span>
+                </div>
+
+                <div class="input-group error">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                    <span class="msg">Incorrect password</span>
+                </div>
+
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
+
+        <div class="register-container">
+            <form class="form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="username" name="username" id="username">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+
+                <button type="submit" class="create-button">Create</button>
+            </form>
+        </div>
       </div>
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script></body>
 </body>

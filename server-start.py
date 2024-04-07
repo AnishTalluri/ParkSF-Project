@@ -79,6 +79,14 @@ def get_main():
 def get_login():
     return render_template("login.html")
 
+@app.route(r'/about.html')
+def get_about():
+    return render_template("about.html")
+
+@app.route(r'/team.html')
+def get_team():
+    return render_template("team.html")
+
 @app.route(r'/register.html')
 def get_register():
     return render_template("register.html")
